@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.unitytest.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.unitytest.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // LevelPlay Mediation SDK (نسمح لـ AdQuality/OMID تتحمّل بشكل طبيعي - GitHub Actions يحل transitive dependencies كامل بعكس CodeAssist)
+    implementation 'com.unity3d.ads-mediation:mediation-sdk:9.5.0'
+
+    // مطلوبة لجلب GAID و App Set ID
+    implementation 'com.google.android.gms:play-services-appset:16.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
+    implementation 'com.google.android.gms:play-services-basement:18.1.0'
+}
