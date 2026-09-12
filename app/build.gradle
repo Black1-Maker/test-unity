@@ -36,3 +36,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
     implementation 'com.google.android.gms:play-services-basement:18.1.0'
 }
+
+// حل تعارض Duplicate class بين kotlin-stdlib الحديثة والنسخ القديمة jdk7/jdk8
+configurations.all {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
