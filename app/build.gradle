@@ -23,8 +23,13 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
 
-    // LevelPlay Mediation SDK (نسمح لـ AdQuality/OMID تتحمّل بشكل طبيعي - GitHub Actions يحل transitive dependencies كامل بعكس CodeAssist)
-    implementation 'com.unity3d.ads-mediation:mediation-sdk:9.5.0'
+    // LevelPlay Mediation SDK
+    implementation('com.unity3d.ads-mediation:mediation-sdk:9.5.0') {
+        exclude group: 'com.unity3d.ads-mediation', module: 'adquality-sdk'
+    }
+
+    // نحدد نسخة AdQuality/OMID يدويًا لأن النسخة التلقائية (9.9.0) غير منشورة فعليًا بأي مستودع
+    implementation 'com.unity3d.ads-mediation:adquality-sdk:9.8.0'
 
     // مطلوبة لجلب GAID و App Set ID
     implementation 'com.google.android.gms:play-services-appset:16.0.0'
