@@ -23,8 +23,8 @@ public class MainActivity extends Activity {
 
     private static final String TAG = "LevelPlayTest";
 
-    private static final String APP_KEY = "2815ff0b5";
-    private static final String INTERSTITIAL_AD_UNIT_ID = "awykqfngdk2c7gfw";
+    private static final String APP_KEY = "28269591d";
+    private static final String INTERSTITIAL_AD_UNIT_ID = "5gxrq7d2t6kz7rtp";
 
     private TextView statusText;
     private Button loadButton;
